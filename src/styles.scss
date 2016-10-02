@@ -1,7 +1,20 @@
 @import '~normalize.css/normalize';
 @import '~ace-css/css/ace.min';
 
+$white: #fff;
 $dark-gray: #222;
+$screen-sm: 40em;
+
+@mixin headshot($size: cover, $pos: center center) {
+  background-image: url('headshot.jpg');
+  background-position: $pos;
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+
+.caps {
+  letter-spacing: .75pt;
+}
 
 body,
 html,
@@ -12,8 +25,11 @@ html,
 
 body {
   font-family: 'Libre Franklin', 'Helvetica Neue', 'Helvetica', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+// Mobile Hero
 .hero {
   align-items: flex-end;
   background: $dark-gray;
@@ -23,10 +39,7 @@ body {
   z-index: 0;
 
   &:after {
-    background-image: url('headshot.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include headshot;
     bottom: 0;
     content: '';
     height: 100%;
@@ -39,8 +52,24 @@ body {
   }
 }
 
-.hero-inner {
+.hero-left {
+  color: $white;
+
+  @media(min-width: $screen-sm) {
+    color: $dark-gray;
+  }
+}
+
+.hero-right {
+  @include headshot(cover, top center);
+}
+
+.lift {
   text-shadow: 0 2px 3px rgba(0, 0, 0, .35);
+
+  @media(min-width: $screen-sm) {
+    text-shadow: none;
+  }
 }
 
 .hr-stubby {
@@ -48,5 +77,24 @@ body {
   border-width: 3px;
   margin-left: 0;
   margin-right: 0;
-  max-width: 100px;
+  max-width: 50px;
+}
+
+// Desktop Hero
+
+@media(min-width: $screen-sm) {
+  .hero {
+    align-items: initial;
+    background: $white;
+    height: 70vh;
+  }
+
+  .hero:after {
+    background-image: none;
+    content: '';
+  }
+}
+
+.bio {
+  background: #fafafa;
 }
