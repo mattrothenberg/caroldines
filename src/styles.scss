@@ -1,0 +1,52 @@
+@import '~normalize.css/normalize';
+@import '~ace-css/css/ace.min';
+
+$dark-gray: #222;
+
+body,
+html,
+.wrap {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Libre Franklin', 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+.hero {
+  align-items: flex-end;
+  background: $dark-gray;
+  display: flex;
+  height: 80vh;
+  position: relative;
+  z-index: 0;
+
+  &:after {
+    background-image: url('headshot.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: .65;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+.hero-inner {
+  text-shadow: 0 2px 3px rgba(0, 0, 0, .35);
+}
+
+.hr-stubby {
+  border-color: #a73fb2;
+  border-width: 3px;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100px;
+}
