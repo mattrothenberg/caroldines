@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.scss';
 import Header from './Header.js'
+import WorkSample from './WorkSample.js';
 import paperLoveClip from './paper_love.mp3';
 
 class App extends Component {
@@ -22,16 +23,8 @@ class App extends Component {
               <div className="col col-12 sm-col-5 sm-pl2">
                 <h3 className="h4 caps gray regular">Sample Work</h3>
                 <hr className="hr-stubby mt1 mb3 faded"/>
-                <div className="work-sample mb3">
-                  <div className="flex items-center mb1">
-                    <h4 className="h3 regular my0 flex-auto">Romance</h4>
-                    <a className="h5 text-decoration-none" href="#">Download</a>
-                  </div>
-                  <audio controls>
-                    <source src={paperLoveClip} type="audio/mpeg"/>
-                    Your browser does not support the audio element.
-                  </audio>
-                </div>
+                <WorkSample src={paperLoveClip} category={"Romance"}/>
+                <WorkSample src={paperLoveClip} category={"Harlequin"}/>
               </div>
             </div>
           </div>

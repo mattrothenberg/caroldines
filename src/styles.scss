@@ -2,12 +2,17 @@
 @import '~ace-css/css/ace.min';
 
 $white: #fff;
+$light-gray: lighten(#aaa, 20%);
 $gray: darken(#aaa, 12%);
 $dark-gray: #222;
 $screen-sm: 40em;
 
 .gray {
   color: $gray;
+}
+
+.medium {
+  font-weight: 500;
 }
 
 @mixin headshot($size: cover, $pos: center center) {
@@ -107,5 +112,10 @@ body {
 
 audio {
   display: block;
+  font-size: 24px;
   width: 100%;
+}
+
+.work-sample {
+  border: 1px solid $light-gray;
 }
