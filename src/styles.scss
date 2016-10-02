@@ -2,8 +2,13 @@
 @import '~ace-css/css/ace.min';
 
 $white: #fff;
+$gray: darken(#aaa, 12%);
 $dark-gray: #222;
 $screen-sm: 40em;
+
+.gray {
+  color: $gray;
+}
 
 @mixin headshot($size: cover, $pos: center center) {
   background-image: url('headshot.jpg');
@@ -56,6 +61,7 @@ body {
   color: $white;
 
   @media(min-width: $screen-sm) {
+    border-bottom: 1px solid darken(#fafafa, 8%);
     color: $dark-gray;
   }
 }
@@ -78,6 +84,10 @@ body {
   margin-left: 0;
   margin-right: 0;
   max-width: 50px;
+
+  &.faded {
+    opacity: .35;
+  }
 }
 
 // Desktop Hero
@@ -95,6 +105,7 @@ body {
   }
 }
 
-.bio {
-  background: #fafafa;
+audio {
+  display: block;
+  width: 100%;
 }
