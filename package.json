@@ -1,6 +1,7 @@
 {
   "name": "carolDines",
   "version": "0.0.1",
+  "homepage": "http://mattrothenberg.github.io/caroldines",
   "private": true,
   "devDependencies": {
     "node-sass": "^3.10.1",
