@@ -6,6 +6,7 @@ $light-gray: lighten(#aaa, 20%);
 $gray: darken(#aaa, 12%);
 $dark-gray: #222;
 $screen-sm: 40em;
+$screen-md: 52em;
 
 .gray {
   color: $gray;
@@ -13,6 +14,10 @@ $screen-sm: 40em;
 
 .medium {
   font-weight: 500;
+}
+
+hr {
+  border-color: $light-gray;
 }
 
 @mixin headshot($size: cover, $pos: center center) {
@@ -37,6 +42,20 @@ body {
   font-family: 'Libre Franklin', 'Helvetica Neue', 'Helvetica', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media(min-width: $screen-sm) {
+    background: #fafafa;
+  }
+}
+
+main {
+  @media(min-width: $screen-sm) {
+    background: $white;
+    margin: 25px auto;
+    max-width: 1040px;
+    padding: 25px;
+    width: 95%;
+  }
 }
 
 // Mobile Hero
@@ -66,13 +85,13 @@ body {
   color: $white;
 
   @media(min-width: $screen-sm) {
-    border-bottom: 1px solid darken(#fafafa, 8%);
     color: $dark-gray;
   }
 }
 
 .hero-right {
   @include headshot(cover, top center);
+  height: 400px;
 }
 
 .lift {
@@ -99,9 +118,9 @@ body {
 
 @media(min-width: $screen-sm) {
   .hero {
-    align-items: initial;
     background: $white;
-    height: 70vh;
+    display: block;
+    height: auto;
   }
 
   .hero:after {
@@ -118,4 +137,16 @@ audio {
 
 .work-sample {
   border: 1px solid $light-gray;
+}
+
+.fancy-link {
+  color: $white;
+
+  @media(min-width: $screen-sm) {
+    color: $gray;
+  }
+}
+
+.headshot {
+  // max-height: 500px;
 }
