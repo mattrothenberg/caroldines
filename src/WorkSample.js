@@ -8,7 +8,7 @@ class WorkSample extends Component {
 				  <h4 className="h3 medium my0 flex-auto">{this.props.category}</h4>
 				  <a className="h5 text-decoration-none" target="_blank" href={this.props.src}>Download</a>
 				</div>
-				<audio controls>
+				<audio controls preload="none">
 				  <source src={this.props.src} type="audio/mpeg"/>
 				  Your browser does not support the audio element.
 				</audio>
